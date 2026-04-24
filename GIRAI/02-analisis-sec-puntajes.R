@@ -57,14 +57,14 @@ ggplot(datos, aes(x = sec_mng, y = mng)) +
 
 ggplot(datos, aes(x = sec_ag, y = ag)) +
   geom_boxplot() + stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") + labs(
-    title = "Puntaje en marcos normativos según nivel de desarrollo secundario",
+    title = "Puntaje en acciones no estatales según nivel de desarrollo secundario",
     subtitle = "La caja muestra cuartiles y mediana; el rombo rojo muestra el promedio",
     x = "Nivel de desarrollo según fuentes secundarias",
     y = "Puntaje ag"
   )
 ggplot(datos, aes(x = sec_ane, y = ane)) +
   geom_boxplot() + stat_summary(fun = mean, geom = "point", size = 3, color = "red")+  labs(
-    title = "Puntaje en marcos normativos según nivel de desarrollo secundario",
+    title = "Puntaje en acciones gubernamentales según nivel de desarrollo secundario",
     subtitle = "La caja muestra cuartiles y mediana; el rombo rojo muestra el promedio",
     x = "Nivel de desarrollo según fuentes secundarias",
     y = "Puntaje ane"
