@@ -17,7 +17,7 @@ moda <- function(x) {
 }
 
 resultado <- aggregate(
-  tipo_privado_en ~ rango_girai,
+  tipo_academia_es ~ rango_girai,
   data = datos,
   FUN = moda
 )
