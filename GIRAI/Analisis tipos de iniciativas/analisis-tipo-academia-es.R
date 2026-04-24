@@ -1,14 +1,14 @@
 source("00-ingesta.R")
 
 
-conteo <- table(datos$tipo_privado_en)
+conteo <- table(datos$tipo_academia_es)
 
 print(conteo)
 
 barplot(
   conteo,
   las = 2,
-  main = "Frecuencia de tipo_privado_en",
+  main = "Frecuencia de tipo_academia_es",
   ylab = "Cantidad",
   col = "lightblue"
 )
