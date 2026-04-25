@@ -4,6 +4,25 @@
 library(dplyr) 
 library(ggplot2)
 
+# Calculamos la frecuencia y proporción de cada dimensión mejor puntuada
+datos %>% 
+  count(`Dimensión mejor puntuada`) %>% 
+  mutate(
+    proporcion = n / sum(n),
+    porcentaje = round(proporcion * 100, 2)
+  ) %>% 
+  arrange(desc(n))
+
+# Graficamos la distribución de la dimensión mejor puntuada
+ggplot(datos, aes(x = `Dimensión mejor puntuada`)) +
+  geom_bar() +
+  labs(
+    title = "Distribución de la dimensión mejor puntuada",
+    subtitle = "Variable categórica nominal",
+    x = "Dimensión mejor puntuada",
+    y = "Cantidad de países"
+  )
+
 
 # Proporción de dimensiones mejor puntuadas
 datos %>% count(`Dimensión mejor puntuada`) %>% mutate(proporcion = n/sum(n))
