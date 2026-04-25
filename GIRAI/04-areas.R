@@ -1,6 +1,21 @@
 
 library(tidyverse)
 
+# Contamos cuántos casos hay para cada cantidad de áreas
+datos %>% 
+  count(areas_mng) %>% 
+  arrange(areas_mng)
+
+# Graficamos la distribución de la cantidad de áreas
+ggplot(datos, aes(x = areas_mng)) +
+  geom_bar() +
+  labs(
+    title = "Distribución de cantidad de áreas en marcos normativos",
+    subtitle = "Variable cuantitativa discreta",
+    x = "Cantidad de áreas",
+    y = "Cantidad de casos"
+  )
+
 # Divimos la cantidad de areas de mng en rangos
 
 # Definimos los cortes y etiquetas para los rangos
@@ -48,7 +63,7 @@ datos_rango_areas_ag %>% group_by(rango_areas_ag) %>% summarise(cantidad = n(),
 
 datos_rango_areas_ane<- datos %>% mutate(rango_areas_ane = cut ( areas_ane, 
                                                                  breaks = cortes_areas,
-                                                                 labels = etiquetas_areas
+                                                                 labels = etiquetas_areas,
                                                                  right = FALSE)) 
 
 datos_rango_areas_ane %>% count(rango_areas_ane) 
