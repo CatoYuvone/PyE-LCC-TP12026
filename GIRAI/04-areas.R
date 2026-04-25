@@ -10,10 +10,11 @@ datos %>%
 ggplot(datos, aes(x = areas_mng)) +
   geom_bar() +
   labs(
-    title = "Distribución de cantidad de áreas en marcos normativos",
-    subtitle = "Variable cuantitativa discreta",
-    x = "Cantidad de áreas",
-    y = "Cantidad de casos"
+    title = "Distribución de los países según la cantidad de áreas temáticas en marcos normativos",
+    subtitle = "Países relevados por el índice GIRAI, 2024.",
+    x = "Cantidad de áreas temáticas en marcos normativos",
+    y = "Cantidad de países",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
 
 # Divimos la cantidad de areas de mng en rangos
@@ -78,26 +79,35 @@ datos_rango_areas_ane %>% group_by(rango_areas_ane) %>% summarise(cantidad = n()
 
 # Hacemos los gráficos
 ggplot(datos_rango_areas_mng, aes(x = rango_areas_mng, y = mng)) +
-  geom_boxplot() + stat_summary(fun = mean, geom = "point", shape= 18, size = 4, color = "red") + labs(
-    title = "Puntaje en marcos normativos según cantidad de áreas",
-    subtitle = "La caja muestra cuartiles y mediana; el rombo rojo muestra el promedio",
-    x = "Áreas temáticas",
-    y = "Puntaje mng"
+  geom_boxplot() +
+  stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") +
+  labs(
+    title = "Distribución del puntaje en marcos normativos según cantidad de áreas temáticas",
+    subtitle = "Países relevados por el índice GIRAI, 2024. La caja representa cuartiles y mediana; el rombo rojo indica el promedio.",
+    x = "Cantidad de áreas temáticas en marcos normativos",
+    y = "Puntaje en marcos normativos (0 a 100)",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
 
 ggplot(datos_rango_areas_ag, aes(x = rango_areas_ag, y = ag)) +
-  geom_boxplot() + stat_summary(fun = mean, geom = "point", shape= 18, size = 4, color = "red") + labs(
-    title = "Puntaje en acciones gubernamentales según cantidad de áreas",
-    subtitle = "La caja muestra cuartiles y mediana; el rombo rojo muestra el promedio",
-    x = "Áreas temáticas",
-    y = "Puntaje ag"
+  geom_boxplot() +
+  stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") +
+  labs(
+    title = "Distribución del puntaje en acciones gubernamentales según cantidad de áreas temáticas",
+    subtitle = "Países relevados por el índice GIRAI, 2024. La caja representa cuartiles y mediana; el rombo rojo indica el promedio.",
+    x = "Cantidad de áreas temáticas en acciones gubernamentales",
+    y = "Puntaje en acciones gubernamentales (0 a 100)",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
 
 ggplot(datos_rango_areas_ane, aes(x = rango_areas_ane, y = ane)) +
-  geom_boxplot() + stat_summary(fun = mean, geom = "point", shape= 18, size = 4, color = "red") + labs(
-    title = "Puntaje en acciones no estatales según cantidad de áreas",
-    subtitle = "La caja muestra cuartiles y mediana; el rombo rojo muestra el promedio",
-    x = "Áreas temáticas",
-    y = "Puntaje ane"
+  geom_boxplot() +
+  stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") +
+  labs(
+    title = "Distribución del puntaje en acciones no estatales según cantidad de áreas temáticas",
+    subtitle = "Países relevados por el índice GIRAI, 2024. La caja representa cuartiles y mediana; el rombo rojo indica el promedio.",
+    x = "Cantidad de áreas temáticas con actores no estatales trabajando",
+    y = "Puntaje en acciones no estatales (0 a 100)",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
 

@@ -47,14 +47,15 @@ p70_resumen <- datos %>%
 # Ver tabla resumen
 p70_resumen
 
-# Gráfico de porcentaje de casos
+# Gráfico de porcentaje de países por tema seleccionado
 ggplot(p70_resumen, aes(x = reorder(opcion, porcentaje_casos), y = porcentaje_casos)) +
   geom_col() +
   coord_flip() +
   labs(
-    title = "Porcentaje de casos que seleccionó cada tema",
-    subtitle = "Pregunta de opción múltiple. Los porcentajes no suman 100% porque cada caso podía seleccionar más de una opción",
-    x = "Tema seleccionado",
-    y = "Porcentaje de casos"
+    title = "Distribución de los países según temas con puntajes superiores a 70",
+    subtitle = "Países relevados por el índice GIRAI, 2024. Pregunta de respuesta múltiple: los porcentajes no suman 100%.",
+    x = "Tema con puntaje superior a 70",
+    y = "Porcentaje de países",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
 

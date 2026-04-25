@@ -8,7 +8,8 @@ print(conteo)
 barplot(
   conteo,
   las = 2,
-  main = "Frecuencia de tipo_academia_es",
-  ylab = "Cantidad",
+  main = "Distribución de los países según el tipo de iniciativa académica más frecuente. Índice GIRAI, 2024.",
+  xlab = "Tipo de iniciativa académica más frecuente",
+  ylab = "Cantidad de países",
   col = "lightblue"
 )

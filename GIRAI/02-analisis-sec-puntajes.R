@@ -28,10 +28,11 @@ datos %>%
 ggplot(datos, aes(x = sec_mng)) +
   geom_bar() +
   labs(
-    title = "Distribución del nivel de desarrollo secundario en marcos normativos",
-    subtitle = "Variable categórica ordinal",
-    x = "Nivel de desarrollo según fuentes secundarias",
-    y = "Cantidad de países"
+    title = "Distribución de los países según el nivel de desarrollo secundario en marcos normativos. Países relevados por el índice GIRAI, 2024.",
+    subtitle = "Nivel de desarrollo construido a partir de fuentes secundarias.",
+    x = "Nivel de desarrollo secundario en marcos normativos",
+    y = "Cantidad de países",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
 
 
@@ -48,10 +49,11 @@ datos %>%
 ggplot(datos, aes(x = sec_ag)) +
   geom_bar() +
   labs(
-    title = "Distribución del nivel de desarrollo secundario en acciones gubernamentales",
-    subtitle = "Variable categórica ordinal",
-    x = "Nivel de desarrollo según fuentes secundarias",
-    y = "Cantidad de países"
+    title = "Distribución de los países según el nivel de desarrollo secundario en acciones gubernamentales. Países relevados por el índice GIRAI, 2024.",
+    subtitle = "Nivel de desarrollo construido a partir de fuentes secundarias.",
+    x = "Nivel de desarrollo secundario en acciones gubernamentales",
+    y = "Cantidad de países",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
 
 
@@ -68,10 +70,11 @@ datos %>%
 ggplot(datos, aes(x = sec_ane)) +
   geom_bar() +
   labs(
-    title = "Distribución del nivel de desarrollo secundario en actores no estatales",
-    subtitle = "Variable categórica ordinal",
-    x = "Nivel de desarrollo según fuentes secundarias",
-    y = "Cantidad de países"
+    title = "Distribución de los países según el nivel de desarrollo secundario en acciones no estatales. Países relevados por el índice GIRAI, 2024.",
+    subtitle = "Nivel de desarrollo construido a partir de fuentes secundarias.",
+    x = "Nivel de desarrollo secundario en acciones no estatales",
+    y = "Cantidad de países",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
 
 # Ver el promedio por grupo de sec
@@ -108,24 +111,34 @@ datos %>% group_by(sec_ane) %>%
 
 # Gráficos
 ggplot(datos, aes(x = sec_mng, y = mng)) +
-  geom_boxplot() + stat_summary(fun = mean, geom = "point", shape= 18, size = 4, color = "red") + labs(
-    title = "Puntaje en marcos normativos según nivel de desarrollo secundario",
-    subtitle = "La caja muestra cuartiles y mediana; el rombo rojo muestra el promedio",
-    x = "Nivel de desarrollo según fuentes secundarias",
-    y = "Puntaje mng"
+  geom_boxplot() +
+  stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") +
+  labs(
+    title = "Distribución del puntaje en marcos normativos según el nivel de desarrollo secundario. Países relevados por el índice GIRAI, 2024.",
+    subtitle = "La caja representa cuartiles y mediana; el rombo rojo indica el promedio.",
+    x = "Nivel de desarrollo secundario en marcos normativos",
+    y = "Puntaje en marcos normativos (0 a 100)",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
 
 ggplot(datos, aes(x = sec_ag, y = ag)) +
-  geom_boxplot() + stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") + labs(
-    title = "Puntaje en acciones gubernamentales según nivel de desarrollo secundario",
-    subtitle = "La caja muestra cuartiles y mediana; el rombo rojo muestra el promedio",
-    x = "Nivel de desarrollo según fuentes secundarias",
-    y = "Puntaje ag"
+  geom_boxplot() +
+  stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") +
+  labs(
+    title = "Distribución del puntaje en acciones gubernamentales según el nivel de desarrollo secundario. Países relevados por el índice GIRAI, 2024.",
+    subtitle = "La caja representa cuartiles y mediana; el rombo rojo indica el promedio.",
+    x = "Nivel de desarrollo secundario en acciones gubernamentales",
+    y = "Puntaje en acciones gubernamentales (0 a 100)",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
+
 ggplot(datos, aes(x = sec_ane, y = ane)) +
-  geom_boxplot() + stat_summary(fun = mean, geom = "point", size = 3, color = "red")+  labs(
-    title = "Puntaje en acciones no estatales según nivel de desarrollo secundario",
-    subtitle = "La caja muestra cuartiles y mediana; el rombo rojo muestra el promedio",
-    x = "Nivel de desarrollo según fuentes secundarias",
-    y = "Puntaje ane"
+  geom_boxplot() +
+  stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") +
+  labs(
+    title = "Distribución del puntaje en acciones no estatales según el nivel de desarrollo secundario. Países relevados por el índice GIRAI, 2024.",
+    subtitle = "La caja representa cuartiles y mediana; el rombo rojo indica el promedio.",
+    x = "Nivel de desarrollo secundario en acciones no estatales",
+    y = "Puntaje en acciones no estatales (0 a 100)",
+    caption = "Fuente: elaboración propia a partir de la base GIRAI."
   )
